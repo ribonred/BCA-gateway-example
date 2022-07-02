@@ -1,0 +1,103 @@
+{
+  "name": "h2h-payment-gateway-api",
+  "version": "1.0.0",
+  "main": "app.js",
+  "license": "MIT",
+  "keywords": [
+    "ultravoucher"
+  ],
+  "author": {
+    "name": "ultravoucher"
+  },
+  "contributors": [
+    "ultravoucher"
+  ],
+  "engines": {
+    "node": ">= 8.10.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "build": "babel src -d dist --copy-files",
+    "start": "node dist/server.js",
+    "local": "export NODE_ENV=localhost && nodemon --exec babel-node src/server.js ",
+    "dev": "export NODE_ENV=development && npm run start",
+    "stag": "export NODE_ENV=staging && nodemon --exec babel-node src/server.js",
+    "prod": "export NODE_ENV=preprod && npm run start",
+    "lint": "eslint . --fix",
+    "precommit": "lint-staged",
+    "test": "export NODE_ENV=test && jest --ci --verbose --forceExit --noStackTrace --silent --errorOnDeprecated --no-cache --detectOpenHandles",
+    "coverage": "npm run test -- --coverage"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-node": "^0.0.1-security",
+    "bluebird": "^3.5.4",
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "config": "^3.0.1",
+    "cors": "^2.8.5",
+    "cron": "^1.7.1",
+    "crypto-js": "^3.1.9-1",
+    "dateformat": "^3.0.3",
+    "dotenv": "^10.0.0",
+    "ejs": "^2.7.1",
+    "elastic-apm-node": "^3.3.0",
+    "express": "~4.16.0",
+    "flatted": "^2.0.0",
+    "fluent-logger": "^3.3.1",
+    "form-data": "^2.5.0",
+    "generate-api-key": "^1.0.0",
+    "helmet": "^3.21.3",
+    "http-errors": "~1.6.2",
+    "ipaddr.js": "^2.0.1",
+    "joi": "^17.6.0",
+    "js-base64": "^3.7.2",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^2.1.0",
+    "lodash": "^4.17.20",
+    "moment": "^2.24.0",
+    "multer": "^1.4.2",
+    "mysql": "^2.17.1",
+    "mysql2": "^1.6.5",
+    "redis": "^3.0.2",
+    "uuid": "^3.3.2",
+    "winston": "^3.2.1",
+    "winston-elasticsearch": "^0.8.1",
+    "winston-loggly-bulk": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.5",
+    "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jest": "^21.27.2",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-watch": "^3.1.5",
+    "faker": "^4.1.0",
+    "husky": "^0.14.3",
+    "jest": "^24.8.0",
+    "jest-cli": "^24.8.0",
+    "latest": "^0.2.0",
+    "lint-staged": "^8.1.5",
+    "nodemon": "^1.18.10",
+    "sinon": "^7.3.1",
+    "supertest": "^4.0.2"
+  },
+  "jest": {
+    "bail": true,
+    "verbose": true
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint",
+      "git add"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "headers": {
+    "X_API_KEY": "x-api-key",
+    "X_DEVICE_TYPE": "x-device-type",
+    "X_DEVICE_OS_VERSION": "x-device-os-version",
+    "X_DEVICE_MODEL": "x-device-model",
+    "X_APP_VERSION": "x-app-version",
+    "X_DEVICE_UTC_OFFSET": "x-device-utc-offset",
+    "X_DEVICE_LANG": "x-device-lang",
+    "X_DEVICE_NOTIFICATION_CODE": "x-device-notification-code",
+    "CONTENT_TYPE": "content-type",
+    "AUTHORIZATION": "authorization"
+  },
+  "app": {
+    "port": 24522,
+		"name": "h2h-payment-gateway-api",
+		"secretKey": "as%OPRotaG<'70+@={/Q"
+  },
+  "accounts":{
+    "bca": 38190,
+    "va_expiration_in_minutes": 15
+  },
+  "jwtOption": {
+    "expire_second":3600,
+
+    "accessTokenOption": {
+      "issuer": "h2h_payment_gateway_api",
+      "jwtid": "h2h-payment-gateway-user.id",
+      "expiresIn": "1 hours",
+		  "subject": "h2h-payment-gateway-access-token"
+    },
+    "refreshTokenOption": {
+      "issuer": "h2h_payment_gateway_api",
+      "jwtid": "h2h-payment-gateway-user.id",
+      "expiresIn": "1 days",
+		  "subject": "h2h-payment-gateway-refresh-token"
+    }
+  }
+}
